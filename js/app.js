@@ -27,14 +27,14 @@ function cookiesByHourPike() {
     var newEl = document.createElement('li');
     var newText = document.createTextNode(pike.hoursOfOperation[i] + pike.hourlySales[i] + ' cookies');
     newEl.appendChild(newText);
-    var position = document.getElementById('pike-list');
-    position.appendChild(newEl);
+    var newList = document.getElementById('pike-list');
+    newList.appendChild(newEl);
   }
 
   // add it together
   var totalSalesPike = document.getElementById('pike-total');
-  var itemContent = totalSalesPike.innerHTML;
-  totalSalesPike.innerHTML = itemContent + pike.totalDailySales;
+  var complete = totalSalesPike.innerHTML;
+  totalSalesPike.innerHTML = complete + pike.totalDailySales;
 }
 cookiesByHourPike();
 ///////////////////////comment line so i dont get confused/////////////////////////
@@ -61,13 +61,47 @@ function cookiesByHourSeatac() {
     var newEl = document.createElement('li');
     var newText = document.createTextNode(seatac.hoursOfOperation[i] + seatac.hourlySales[i] + ' cookies');
     newEl.appendChild(newText);
-    var position = document.getElementById('seatac-list');
-    position.appendChild(newEl);
+    var newList = document.getElementById('seatac-list');
+    newList.appendChild(newEl);
   }
 
   // add it together
   var totalSalesSeatac = document.getElementById('seatac-total');
-  var itemContent = totalSalesSeatac.innerHTML;
-  totalSalesSeatac.innerHTML = itemContent + pike.totalDailySales;
+  var complete = totalSalesSeatac.innerHTML;
+  totalSalesSeatac.innerHTML = complete + seatac.totalDailySales;
+}
+cookiesByHourSeatac();
+
+/////////////////comment line so I dont get lost////////////////
+var seattleCenter = {
+  minCustomer: 11,
+  maxCustomer: 38,
+  avgerageSales: 3.7,
+  hoursOfOperation: ['06:00 ', '07:00 ', '08:00 ', '09:00 ', '10:00 ', '11:00 ', '12:00 ', '13:00 ', '14:00 ', '15:00 ', '16:00 ', '17:00 ', '18:00 ', '19:00 ', '20:00 '],
+  hourlySales: [],
+  totalDailySales: 0,
+  getRandom: function (minCustomer, maxCustomer) {
+    return Math.random() * (maxCustomer - minCustomer) + minCustomer;
+  },
+};
+
+//create the store function 
+
+function cookiesByHourSeattleCenter() {
+  for (var i = 0; i < seattleCenter.hoursOfOperation.length; i++) {
+    var randomHourlyNumber = Math.round(seattleCenter.getRandom(seattleCenter.minCustomer, seattleCenter.maxCustomer) * seattleCenter.avgerageSales);
+    seattleCenter.hourlySales.push(randomHourlyNumber);
+    seattleCenter.totalDailySales += seattleCenter.hourlySales[i];
+    var newEl = document.createElement('li');
+    var newText = document.createTextNode(seatac.hoursOfOperation[i] + seatac.hourlySales[i] + ' cookies');
+    newEl.appendChild(newText);
+    var newList = document.getElementById('seattle-center-list');
+    newList.appendChild(newEl);
+  }
+
+  // add it together
+  var totalSalesSeattleCenter = document.getElementById('seatac-total');
+  var complete = totalSalesSeattleCenter.innerHTML;
+  totalSalesSeattleCenter.innerHTML = complete + seattleCenter.totalDailySales;
 }
 cookiesByHourSeatac();
