@@ -17,7 +17,7 @@ var pike = {
   },
 };
 
-//create the store function 
+//create the store function
 
 function cookiesByHourPike() {
   for (var i = 0; i < pike.hoursOfOperation.length; i++) {
@@ -38,7 +38,7 @@ function cookiesByHourPike() {
 }
 cookiesByHourPike();
 ///////////////////////comment line so i dont get confused/////////////////////////
-// create the store 
+// create the store
 var seatac = {
   minCustomer: 3,
   maxCustomer: 24,
@@ -51,7 +51,7 @@ var seatac = {
   },
 };
 
-//create the store function 
+//create the store function
 
 function cookiesByHourSeatac() {
   for (var i = 0; i < seatac.hoursOfOperation.length; i++) {
@@ -85,7 +85,7 @@ var seattleCenter = {
   },
 };
 
-//create the store function 
+//create the store function
 
 function cookiesByHourSeattleCenter() {
   for (var i = 0; i < seattleCenter.hoursOfOperation.length; i++) {
@@ -93,7 +93,7 @@ function cookiesByHourSeattleCenter() {
     seattleCenter.hourlySales.push(randomHourlyNumber);
     seattleCenter.totalDailySales += seattleCenter.hourlySales[i];
     var newEl = document.createElement('li');
-    var newText = document.createTextNode(seatac.hoursOfOperation[i] + seatac.hourlySales[i] + ' cookies');
+    var newText = document.createTextNode(seattleCenter.hoursOfOperation[i] + seattleCenter.hourlySales[i] + ' cookies');
     newEl.appendChild(newText);
     var newList = document.getElementById('seattle-center-list');
     newList.appendChild(newEl);
@@ -104,4 +104,39 @@ function cookiesByHourSeattleCenter() {
   var complete = totalSalesSeattleCenter.innerHTML;
   totalSalesSeattleCenter.innerHTML = complete + seattleCenter.totalDailySales;
 }
-cookiesByHourSeatac();
+cookiesByHourSeattleCenter();
+
+/////////////////command line capitol hill/////////////////////
+
+var capitolHill = {
+  minCustomer: 20,
+  maxCustomer: 38,
+  avgerageSales: 2.3,
+  hoursOfOperation: ['06:00 ', '07:00 ', '08:00 ', '09:00 ', '10:00 ', '11:00 ', '12:00 ', '13:00 ', '14:00 ', '15:00 ', '16:00 ', '17:00 ', '18:00 ', '19:00 ', '20:00 '],
+  hourlySales: [],
+  totalDailySales: 0,
+  getRandom: function (minCustomer, maxCustomer) {
+    return Math.random() * (maxCustomer - minCustomer) + minCustomer;
+  },
+};
+
+//create the store function
+
+function cookiesByHourCapitolHill() {
+  for (var i = 0; i < capitolHill.hoursOfOperation.length; i++) {
+    var randomHourlyNumber = Math.round(capitolHill.getRandom(capitolHill.minCustomer, capitolHill.maxCustomer) * capitolHill.avgerageSales);
+    capitolHill.hourlySales.push(randomHourlyNumber);
+    capitolHill.totalDailySales += capitolHill.hourlySales[i];
+    var newEl = document.createElement('li');
+    var newText = document.createTextNode(capitolHill.hoursOfOperation[i] + seattleCenter.hourlySales[i] + ' cookies');
+    newEl.appendChild(newText);
+    var newList = document.getElementById('Capitol-Hill-list');
+    newList.appendChild(newEl);
+  }
+
+  // add it together
+  var totalSalesCapitolHill = document.getElementById('seatac-total');
+  var complete = totalSalesCapitolHill.innerHTML;
+  totalSalesCapitolHill.innerHTML = complete + capitolHill.totalDailySales;
+}
+cookiesByHourCapitolHill();
