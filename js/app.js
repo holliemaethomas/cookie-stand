@@ -128,15 +128,49 @@ function cookiesByHourCapitolHill() {
     capitolHill.hourlySales.push(randomHourlyNumber);
     capitolHill.totalDailySales += capitolHill.hourlySales[i];
     var newEl = document.createElement('li');
-    var newText = document.createTextNode(capitolHill.hoursOfOperation[i] + seattleCenter.hourlySales[i] + ' cookies');
+    var newText = document.createTextNode(capitolHill.hoursOfOperation[i] + capitolHill.hourlySales[i] + ' cookies');
     newEl.appendChild(newText);
-    var newList = document.getElementById('Capitol-Hill-list');
+    var newList = document.getElementById('capitol-Hill-list');
     newList.appendChild(newEl);
   }
 
   // add it together
-  var totalSalesCapitolHill = document.getElementById('seatac-total');
+  var totalSalesCapitolHill = document.getElementById('capitol-Hill-total');
   var complete = totalSalesCapitolHill.innerHTML;
   totalSalesCapitolHill.innerHTML = complete + capitolHill.totalDailySales;
 }
 cookiesByHourCapitolHill();
+
+///////////////////////comment line alki beach//////////////////////////////////
+var alkiBeach = {
+  minCustomer: 20,
+  maxCustomer: 38,
+  avgerageSales: 2.3,
+  hoursOfOperation: ['06:00 ', '07:00 ', '08:00 ', '09:00 ', '10:00 ', '11:00 ', '12:00 ', '13:00 ', '14:00 ', '15:00 ', '16:00 ', '17:00 ', '18:00 ', '19:00 ', '20:00 '],
+  hourlySales: [],
+  totalDailySales: 0,
+  getRandom: function (minCustomer, maxCustomer) {
+    return Math.random() * (maxCustomer - minCustomer) + minCustomer;
+  },
+};
+
+//create the store function
+
+function cookiesByHourAlkiBeach() {
+  for (var i = 0; i < alkiBeach.hoursOfOperation.length; i++) {
+    var randomHourlyNumber = Math.round(alkiBeach.getRandom(alkiBeach.minCustomer, alkiBeach.maxCustomer) * alkiBeach.avgerageSales);
+    alkiBeach.hourlySales.push(randomHourlyNumber);
+    alkiBeach.totalDailySales += alkiBeach.hourlySales[i];
+    var newEl = document.createElement('li');
+    var newText = document.createTextNode(alkiBeach.hoursOfOperation[i] + alkiBeach.hourlySales[i] + ' cookies');
+    newEl.appendChild(newText);
+    var newList = document.getElementById('alki-beach-list');
+    newList.appendChild(newEl);
+  }
+
+  // add it together
+  var totalSalesAlkiBeach = document.getElementById('alki-beach-total');
+  var complete = totalSalesAlkiBeach.innerHTML;
+  totalSalesAlkiBeach.innerHTML = complete + totalSalesAlkiBeach.totalDailySales;
+}
+cookiesByHourAlkiBeach();
