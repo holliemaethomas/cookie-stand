@@ -158,7 +158,7 @@ var alkiBeach = {
 
 function cookiesByHourAlkiBeach() {
   for (var i = 0; i < alkiBeach.hoursOfOperation.length; i++) {
-    var randomHourlyNumber = Math.round(alkiBeach.getRandom(alkiBeach.minCustomer, alkiBeach.maxCustomer) * alkiBeach.avgerageSales);
+    var randomHourlyNumber = Math.round(alkiBeach.getRandom(alkiBeach.minCustomer, alkiBeach.maxCustomer) * alkiBeach.averageSales);
     alkiBeach.hourlySales.push(randomHourlyNumber);
     alkiBeach.totalDailySales += alkiBeach.hourlySales[i];
     var newEl = document.createElement('li');

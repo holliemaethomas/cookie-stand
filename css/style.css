@@ -1,4 +1,12 @@
 
 body{
-  background-color: rgb(185, 148, 27)
+  background-color: rgb(185, 148, 27);
+  border: 10px solid transparent;
+    padding: 15px;
+    border-image: url(/Users/holliethomas/codefellows/201/cookie-stand/img/cookies.png) 10 round;
+}
+
+h1{
+  text-align: center;
+  font-size: 30pt;
 }
