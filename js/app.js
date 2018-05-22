@@ -174,3 +174,26 @@ function cookiesByHourAlkiBeach() {
   totalSalesAlkiBeach.innerHTML = complete + totalSalesAlkiBeach.totalDailySales;
 }
 cookiesByHourAlkiBeach();
+
+
+var allLocations = [];
+var totalCookiesByHour = 0;
+var netTotal = 0;
+
+function MakeStore(name, minCustomer, maxCustomer, avgCookiesSold) {
+  ///keys passed into a constructor function as arguments are called parameters
+  /////////statements in constructor functions add properties or methods
+  //////'this' keyword is used instead of the object name to indicate that the property or method belongs to the object the constructor function creates
+  ///////this constructor function has four paramenters 'name, minCust'..etc...
+  this.name = name;  ///these are still key value pairs//
+  this.minCustomer = minCustomer;
+  this.avgCookiesSold = avgCookiesSold;
+  this.randomCustomerPerHour = [];
+  this.avgCookiesSoldPerHour = [];
+  this.totalCookies = 0;
+  allLocations.push(this);
+  ///using 'this' keyword in front of method is to show that the method belongs to the object the function creates
+  //this.calcRandCustByHour = function()
+  //methods go here
+  //use prototypes
+}
