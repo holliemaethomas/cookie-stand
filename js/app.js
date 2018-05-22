@@ -106,7 +106,7 @@ function cookiesByHourSeattleCenter() {
 }
 cookiesByHourSeattleCenter();
 
-/////////////////command line capitol hill/////////////////////
+/////////////////comment line capitol hill/////////////////////
 
 var capitolHill = {
   minCustomer: 20,
@@ -158,7 +158,7 @@ var alkiBeach = {
 
 function cookiesByHourAlkiBeach() {
   for (var i = 0; i < alkiBeach.hoursOfOperation.length; i++) {
-    var randomHourlyNumber = Math.round(alkiBeach.getRandom(alkiBeach.minCustomer, alkiBeach.maxCustomer) * alkiBeach.avgerageSales);
+    var randomHourlyNumber = Math.round(alkiBeach.getRandom(alkiBeach.minCustomer, alkiBeach.maxCustomer) * alkiBeach.averageSales);
     alkiBeach.hourlySales.push(randomHourlyNumber);
     alkiBeach.totalDailySales += alkiBeach.hourlySales[i];
     var newEl = document.createElement('li');
@@ -174,3 +174,60 @@ function cookiesByHourAlkiBeach() {
   totalSalesAlkiBeach.innerHTML = complete + totalSalesAlkiBeach.totalDailySales;
 }
 cookiesByHourAlkiBeach();
+
+
+//////////////////////class notes////////////////
+
+///create an hourly array//////////
+ var openHours = ['06:00 ', '07:00 ', '08:00 ', '09:00 ', '10:00 ', '11:00 ', '12:00 ', '13:00 ', '14:00 ', '15:00 ', '16:00 ', '17:00 ', '18:00 ', '19:00 ', '20:00 '];
+
+ /////create object literal for first and pike////////
+ var firstAndPikeSt = {
+name: 'First and Pike'
+///////creating key value pairs inside object are called properties////////////
+minCustPerHour: 23,
+////////key minCustPerHour and value is 23/////////////
+maxCustPerHour: 65,
+avgSales:6.3
+randCustByHour:[],
+cookiesSoldByTime[],
+totalSales: 0,
+///////////////method for random customers by hour//////////
+///// a function inside an object is a method/////////
+calcRandCustByHour: function(){
+  for(var i = 0; i < openHours.length; i++)  //////loop through  length of array////// 
+  {
+    this.randCustByHour.push(math.floor(math.random)() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour;
+    //////////// 'this' refers to a key within the object, as long as you are still in the object you can use 'this'/////////
+  }
+}
+calcCookiesSoldByHour: function(){
+  for(var j = 0; j < openHours.length; j++) {
+    this.cookiesSoldByTime.push(math.round(this.avgSales * this.randCustByHour[j]))
+  ////////////////// to get cookies sold by hour multiply average sales by customer per hour//////////
+  }
+}
+render: function (){
+  var firstAndPikeSt = document.getElementById('firstAndPike');
+  var fandp = document.getElementById('fandp');
+  ///////calling the methods to html
+  this.calcRandCustByHour();
+  this.calcCookiesSoldByHour();
+  /////connecting the content by ids to browser//////
+  ///////create var to append(stick things) to//////
+  //////create a new h3 element//////
+  var h3EL = document.createElement('h3');
+  ////////add text to new h3 element////////
+  h3el.textContent = this.name;
+  ///////////////////////////// ATTENTION!!!!!!!!change actual work from node to textcontent!!!!!!!!!///////////
+  fandp.appendChild(h3EL);
+  ///////////h3El is the child being appended(stuck to the parent fandp)
+  for(var k = 0; k < openHours.length k++){
+    var LiEl = document.createElement('li'); 
+    /////write it to the DOM (html)
+    Liel.textContent = hours[k] + ':' + this.cookiesSoldByTime[k] + ' cookies';
+    firstAndPikeSt.appendChild(LiEl);
+  }
+}
+ };
+ firstAndPikeSt.render();
