@@ -106,7 +106,7 @@ function cookiesByHourSeattleCenter() {
 }
 cookiesByHourSeattleCenter();
 
-/////////////////command line capitol hill/////////////////////
+/////////////////comment line capitol hill/////////////////////
 
 var capitolHill = {
   minCustomer: 20,
