@@ -1,4 +1,36 @@
 
 body{
-  background-color: rgb(185, 148, 27)
+  background-color: rgb(185, 148, 27);
 }
+
+/* tr:nth-child(odd){
+  color: rgb(90, 54, 6);
+} */
+
+#store-table{
+  font-size: 15pt;
+  border: 1px solid black;
+  color: rgb(133, 45, 4);
+  background-color: bisque;
+}
+
+td, th{
+  border: 1px solid black;
+
+}
+/* #input-area{
+padding: 40pt;
+}
+input[type=text] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=number] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+} */
