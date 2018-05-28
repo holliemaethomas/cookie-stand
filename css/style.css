@@ -1,4 +1,62 @@
 
+<<<<<<< HEAD
+/* ............................  SALES.HTML................................................ */
+*{
+  background-color: rgb(185, 148, 27);
+  margin: 15pt;
+}
+
+
+#salesTitle{
+   font-family: 'Indie Flower', cursive;
+   font-size: 50pt;
+   text-align: center;
+}
+
+#store-table{
+  border: black 1pt solid;
+}
+
+#input-area{
+  border: black 1pt solid;
+}
+/* ....................................................................................... */
+
+
+
+
+
+
+/* ....................................INDEX.HTML.......................................... */
+
+#head{
+text-align: center;
+font-size: 25pt;
+font-family: 'Alegreya', serif;
+}
+
+
+#title{
+  font-family: 'Indie Flower', cursive;
+  font-size: 45pt;
+  text-align: center;
+}
+
+#topArt{
+  display: flex;
+  align-items: flex-end;
+ padding-left: 15%;
+}
+#homeSalmon{
+  height: 200px;
+  width: 500px;
+ 
+}
+#cookie{
+  height: 100px;
+  width: 100px;
+}
+=======
 body{
   background-color: rgb(185, 148, 27);
 }
@@ -34,3 +92,4 @@ input[type=number] {
     margin: 8px 0;
     box-sizing: border-box;
 } */
+>>>>>>> constructorsAndForm
