@@ -2,7 +2,7 @@
 /* ............................  SALES.HTML................................................ */
 *{
   background-color: rgb(185, 148, 27);
-  margin: 15pt;
+ 
 }
 
 
@@ -19,7 +19,7 @@
 #input-area{
   border: black 1pt solid;
 }
-/* ....................................................................................... */
+
 
 
 
@@ -59,12 +59,10 @@ body{
   background-color: rgb(185, 148, 27);
 }
 
-/* tr:nth-child(odd){
-  color: rgb(90, 54, 6);
-} */
+
 
 #store-table{
-  font-size: 15pt;
+  font-size: 10pt;
   border: 1px solid black;
   color: rgb(133, 45, 4);
   background-color: bisque;
@@ -90,3 +88,10 @@ input[type=number] {
     margin: 8px 0;
     box-sizing: border-box;
 } */
+
+#family{
+  display: block;
+  margin: auto;
+  height: 25%;
+  width: 30%;
+}
