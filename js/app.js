@@ -15,7 +15,7 @@ var randomNumberGenerator = function (max, min) {
   return projectedCustomers;
 }
 
-var hoursOfOperation = ['0600:', '0700:', '0800:', '0900:', '1000:', '1100:', '1200:', '1300:', '1400:', '1500:', '1600:', '1700:', '1800:', '1900:', '2000:']
+var hoursOfOperation = ['0600:', '0700:', '0800:', '0900:', '1000:', '1100:', '1200:', '1300:', '1400:', '1500:', '1600:', '1700:', '1800:', '1900:']
 //global variable
 
 function Store(minimumCustomer, maximumCustomer, averageSale, storeLocation) {
@@ -111,7 +111,6 @@ var makeHeaderRow = function () {
   }
 }
 
-//need cookies sold by hour
 
 
 var firstandpike = new Store(23, 65, 6.3, 'First And Pike')
